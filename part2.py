@@ -17,4 +17,15 @@ if flavour=="None":
 else:
     st.write(f"Great choice, You got {flavour}'s Aura!")
 
+Aura = st.slider("Aura level ", 0, 9999, 100)
+st.write(f"Aura level got {Aura}")
 
+cups = st.number_input("How many days U Aura remain?", min_value=1, max_value=10, step=1)
+st.write(f"Selected Aura days U get {cups}")
+
+name = st.text_input("Enter your name")
+if name:
+    st.write(f"Welcome, {name} ! You get unmachable Aura")
+
+dob = st.date_input("Select your date of birth")
+st.write(f"Your date of birth {dob}")
