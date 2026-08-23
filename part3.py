@@ -21,4 +21,8 @@ elif vote_2:
 name = st.sidebar.text_input("Enter your name")
 side = st.sidebar.selectbox("Choose your side:", ["Hero", "Villian"])
 
- 
+with st.expander("Aura Information"):
+    st.write("""This app allows you to explore different types of auras and their effects. You can choose between Hero's Aura and Villain's Aura, and see how they impact your aura level and days of aura remaining.""")
+
+st.markdown('### welcome to aura legends')
+st.markdown('>feel this')
