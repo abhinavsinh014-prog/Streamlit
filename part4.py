@@ -13,3 +13,14 @@ if file:
 if file:
     st.subheader("Data Summary")
     st.write(df.describe())
+
+if file:
+    st.subheader("Data Visualization")
+    st.line_chart(df)
+
+if file:
+    cities = df['city'].unique()
+    selected_city = st.selectbox("Select a city to filter data:", cities)
+    filtered_data = df[df['city'] == selected_city]
+    st.subheader("Filtered Data")
+    st.dataframe(filtered_data)
