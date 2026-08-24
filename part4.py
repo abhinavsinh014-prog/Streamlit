@@ -9,3 +9,7 @@ if file:
     df= pd.read_csv(file)
     st.subheader("Uploaded Data")
     st.dataframe(df)
+
+if file:
+    st.subheader("Data Summary")
+    st.write(df.describe())
