@@ -41,10 +41,10 @@ df = pd.DataFrame({
     "school_rating": school_rating,
     "price": price
 })
-print("Dataset shape:", df.shape)
-print("\nColumns:", list(df.columns))
-print("\nFirst 5 rows:\n", df.head())
-print("\nSummary statistics:\n", df.describe())
+# print("Dataset shape:", df.shape)
+# print("\nColumns:", list(df.columns))
+# print("\nFirst 5 rows:\n", df.head())
+# print("\nSummary statistics:\n", df.describe())
 
 plt.figure(figsize=(10, 8))
 sns.heatmap(df.corr(), annot=True, fmt=".2f", cmap="coolwarm")
@@ -149,5 +149,5 @@ predicted_price = model.predict(new_house_scaled)[0]
 print("\n--- New House Prediction ---")
 for feature, value in new_house.items():
     print(f"{feature}: {value}")
-if predicted_price:
-    st.write(f"Predicted Price: ${predicted_price:,.0f}")
+if st.button("Want House Price"):
+    st.success(f"Predicted House Price: ${predicted_price:,.2f}")
