@@ -65,3 +65,15 @@ sns.scatterplot(
 
 plt.title("Study Hours vs Previous Score")
 plt.savefig("study_hours_vs_previous_score.png")
+
+X = df.drop("Passed", axis=1)
+
+y = df["Passed"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.2,
+    random_state=42,
+    stratify=y
+)
