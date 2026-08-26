@@ -252,3 +252,49 @@ model = DecisionTreeClassifier(
 
 model.fit(X_train, y_train)
 
+
+st.subheader("Predict Student Performance")
+
+study_hours_input = st.number_input(
+    "Study Hours",
+    min_value=0.0,
+    max_value=24.0,
+    value=5.0
+)
+
+attendance_input = st.number_input(
+    "Attendance (%)",
+    min_value=0.0,
+    max_value=100.0,
+    value=75.0
+)
+
+previous_score_input = st.number_input(
+    "Previous Score",
+    min_value=0.0,
+    max_value=100.0,
+    value=60.0
+)
+
+sleep_hours_input = st.number_input(
+    "Sleep Hours",
+    min_value=0.0,
+    max_value=24.0,
+    value=7.0
+)
+
+assignments_input = st.number_input(
+    "Assignments Completed",
+    min_value=0,
+    max_value=10,
+    value=5
+)
+
+extracurricular_input = st.number_input(
+    "Extracurricular Activities",
+    min_value=0,
+    max_value=1,
+    value=0
+)
+
+
