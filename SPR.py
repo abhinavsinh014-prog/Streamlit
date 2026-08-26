@@ -45,3 +45,23 @@ df = pd.DataFrame({
     "Extracurricular": extracurricular,
     "Passed": passed
 })
+
+sns.countplot(
+    x="Passed",
+    data=df
+)
+
+plt.title("Student Pass/Fail Distribution")
+plt.xlabel("Passed")
+plt.ylabel("Number of Students")
+plt.savefig("student_pass_fail.png")
+
+sns.scatterplot(
+    x="StudyHours",
+    y="PreviousScore",
+    hue="Passed",
+    data=df
+)
+
+plt.title("Study Hours vs Previous Score")
+plt.savefig("study_hours_vs_previous_score.png")
