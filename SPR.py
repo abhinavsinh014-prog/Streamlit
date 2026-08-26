@@ -77,3 +77,36 @@ X_train, X_test, y_train, y_test = train_test_split(
     random_state=42,
     stratify=y
 )
+
+model = DecisionTreeClassifier(
+    random_state=42
+)
+
+model.fit(
+    X_train,
+    y_train
+)
+
+y_pred = model.predict(X_test)
+
+depths = range(1, 16)
+
+train_scores = []
+test_scores = []
+
+for depth in depths:
+
+    model = DecisionTreeClassifier(
+        max_depth=depth,
+        random_state=42
+    )
+
+    model.fit(X_train, y_train)
+
+    train_scores.append(
+        model.score(X_train, y_train)
+    )
+
+    test_scores.append(
+        model.score(X_test, y_test)
+    )
