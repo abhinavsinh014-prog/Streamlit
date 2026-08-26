@@ -298,3 +298,37 @@ extracurricular_input = st.number_input(
 )
 
 
+if st.button("Predict Performance"):
+
+    input_data = pd.DataFrame({
+        "StudyHours": [study_hours_input],
+        "Attendance": [attendance_input],
+        "PreviousScore": [previous_score_input],
+        "SleepHours": [sleep_hours_input],
+        "Assignments": [assignments_input],
+        "Extracurricular": [extracurricular_input]
+    })
+
+    prediction = model.predict(input_data)
+
+    probability = model.predict_proba(input_data)
+
+    if prediction[0] == 1:
+
+        st.success("The predicted performance is: PASSED")
+
+        st.write(
+            f"Probability of Passing: "
+            f"{probability[0][1]:.2%}"
+        )
+
+    else:
+
+        st.error("The predicted performance is: FAILED")
+
+        st.write(
+            f"Probability of Passing: "
+            f"{probability[0][0]:.2%}"
+        )
+
+        
